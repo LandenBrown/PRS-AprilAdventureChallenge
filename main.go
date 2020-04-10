@@ -6,6 +6,10 @@ import (
 	"./modules"
 )
 
+func StartANewGame() {
+	modules.PlayerSetup()
+	modules.MainGameEngine()
+}
 func main() {
 	versionNumber := 0.01
 
@@ -18,6 +22,7 @@ func main() {
 		fmt.Println("1. Load Game\n2. New Game\n3. Options\n4. Exit")
 		fmt.Scan(&startResponse)
 		switch startResponse {
+		//Load Game Case
 		case "1":
 			fmt.Println("You selected Load Game")
 			saveExists := false
@@ -34,11 +39,12 @@ func main() {
 				switch newGameResponse {
 				case "1":
 					fmt.Println("Starting New Game...")
-					modules.MainGameEngine()
+					StartANewGame()
 				default:
 					fmt.Println("Exiting...")
 				}
 			}
+		//New Game Case
 		case "2":
 			fmt.Println("You selected New Game")
 			tutorialSelected := "0"
@@ -54,9 +60,13 @@ func main() {
 				fmt.Println("Skipping tutorial...")
 			}
 			fmt.Println("Load player option selections...")
+			StartANewGame()
+		//Options Case
 		case "3":
 			fmt.Println("You selected Options")
 			fmt.Println("Needs designed by Jake...")
+
+		//Exit case
 		case "4":
 			fmt.Println("Exiting game...")
 			i = 2
