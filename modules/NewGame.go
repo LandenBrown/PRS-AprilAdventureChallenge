@@ -2,6 +2,8 @@ package modules
 
 import (
 	"fmt"
+
+	"./xtra"
 )
 
 func NewGame() {
@@ -18,4 +20,5 @@ func NewGame() {
 		fmt.Println("Skipping tutorial...")
 	}
 	fmt.Println("Load player option selections...")
+	xtra.TestXtra()
 }

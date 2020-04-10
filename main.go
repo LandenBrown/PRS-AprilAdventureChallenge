@@ -26,6 +26,7 @@ func main() {
 			modules.NewGame()
 		case "3":
 			fmt.Println("You selected Options")
+			modules.StartMenuOptions()
 		case "4":
 			fmt.Println("Exiting game...")
 			i = 2
