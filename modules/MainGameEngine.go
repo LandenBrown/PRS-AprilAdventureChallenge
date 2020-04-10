@@ -2,8 +2,11 @@ package modules
 
 import (
 	"fmt"
+
+	"./engine"
 )
 
 func MainGameEngine() {
-	fmt.Println("Needs designed by Jake...")
+	fmt.Println("This will be the main game engine")
+	engine.TestXtra()
 }

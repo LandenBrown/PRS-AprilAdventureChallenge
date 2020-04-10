@@ -20,13 +20,43 @@ func main() {
 		switch startResponse {
 		case "1":
 			fmt.Println("You selected Load Game")
-			modules.LoadGame()
+			saveExists := false
+			//Find if there is an existing save
+			fmt.Println("Is there an existing save?")
+			//Needs to be built out, but this will check for the existence of a file
+			switch saveExists {
+			case true:
+				fmt.Println("Load attributes and load game engine...")
+			default:
+				fmt.Println("No save exists, would you like to start a new game?\n1. Yes \n2. No")
+				var newGameResponse string
+				fmt.Scan(&newGameResponse)
+				switch newGameResponse {
+				case "1":
+					fmt.Println("Starting New Game...")
+					modules.MainGameEngine()
+				default:
+					fmt.Println("Exiting...")
+				}
+			}
 		case "2":
 			fmt.Println("You selected New Game")
-			modules.NewGame()
+			tutorialSelected := "0"
+			//Ask if they would like to start the tutorial
+			fmt.Println("If this is your first time experiencing Dark Tribal, we recommend going through the tutorial.")
+			fmt.Println("Would you like to start the tutorial now?\n1. Yes\n2. No")
+			fmt.Scan(&tutorialSelected)
+			//Needs to be built out, but this will check for the existence of a file
+			switch tutorialSelected {
+			case "1":
+				fmt.Println("Loading tutorial")
+			default:
+				fmt.Println("Skipping tutorial...")
+			}
+			fmt.Println("Load player option selections...")
 		case "3":
 			fmt.Println("You selected Options")
-			modules.StartMenuOptions()
+			fmt.Println("Needs designed by Jake...")
 		case "4":
 			fmt.Println("Exiting game...")
 			i = 2
