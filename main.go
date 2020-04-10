@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"time"
+
+	"./modules"
 )
 
 func main() {
@@ -19,13 +20,17 @@ func main() {
 		switch startResponse {
 		case "1":
 			fmt.Println("You selected Load Game")
+			modules.LoadGame()
 		case "2":
 			fmt.Println("You selected New Game")
+			modules.NewGame()
 		case "3":
 			fmt.Println("You selected Options")
 		case "4":
 			fmt.Println("Exiting game...")
 			i = 2
+		default:
+			fmt.Println("Invalid Option.")
 		}
 
 	}
