@@ -3,7 +3,7 @@ package main
 
 //This statement says that we are importing packages/libraries (or libs) for their contained functions.
 import (
-	"fmt"
+	"fmt" //This is the "format" package.
 )
 
 //This statement is a special function in that it tells Go to call it and run it immediately
